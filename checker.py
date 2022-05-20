@@ -6,6 +6,7 @@ def online(url, timeout=3):
     error = Exception('unknown error')
     parser = urlparse(url)
     host = parser.netloc or parser.path.split('/')[0]
+    print(parser.netloc)
 
     for port in (80, 443):
         connection = HTTPConnection(host=host, port=port, timeout=timeout)
